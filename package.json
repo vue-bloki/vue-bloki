@@ -1,0 +1,23 @@
+{
+  "name": "vue-bloki",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vue-bloki/vue-bloki.git"
+  },
+  "keywords": [
+    "vue",
+    "vuejs"
+  ],
+  "author": "Piotr 'piotros' Baran",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/vue-bloki/vue-bloki/issues"
+  },
+  "homepage": "https://github.com/vue-bloki/vue-bloki#readme"
+}

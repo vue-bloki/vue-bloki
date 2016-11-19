@@ -15,7 +15,7 @@
     "vuejs"
   ],
   "author": "Piotr 'piotros' Baran",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/vue-bloki/vue-bloki/issues"
   },

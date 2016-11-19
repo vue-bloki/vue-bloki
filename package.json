@@ -19,5 +19,16 @@
   "bugs": {
     "url": "https://github.com/vue-bloki/vue-bloki/issues"
   },
-  "homepage": "https://github.com/vue-bloki/vue-bloki#readme"
+  "homepage": "https://github.com/vue-bloki/vue-bloki#readme",
+  "contributors": [
+    {
+      "name": "Piotr Baran",
+      "email": null,
+      "url": "https://github.com/piotros",
+      "contributions": 2,
+      "additions": 698,
+      "deletions": 0,
+      "hireable": null
+    }
+  ]
 }

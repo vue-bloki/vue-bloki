@@ -1,22 +1,37 @@
 <template>
   <div id="app">
+    <layout>
+
+    </layout>
   </div>
 </template>
 
-<script>
+<script type="text/babel">
+  import Layout from './components/layout.vue'
+
   export default {
     name: 'app',
-    components: {}
+
+    components: {
+      Layout
+    }
   }
 </script>
 
 <style>
-  #app {
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body, #app {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
   }
 </style>

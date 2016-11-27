@@ -1,19 +1,45 @@
 <template>
   <div id="app">
     <layout>
-
+      <navbar slot="sidebar" :items="menuItems"></navbar>
     </layout>
   </div>
 </template>
 
 <script type="text/babel">
   import Layout from './components/layout.vue'
+  import Navbar from './components/navbar.vue'
 
   export default {
     name: 'app',
 
     components: {
-      Layout
+      Layout,
+      Navbar
+    },
+
+    data () {
+      return {
+        menuItems: [
+          {
+            label: 'Home',
+            href: '/'
+          },
+          {
+            label: 'About',
+            href: '/about'
+          },
+          {
+            label: 'Disabled item',
+            isDisabled: true
+          },
+          {
+            label: 'Active item',
+            href: '/',
+            isActive: true
+          }
+        ]
+      }
     }
   }
 </script>

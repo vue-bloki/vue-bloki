@@ -2,6 +2,7 @@
   <div id="app">
     <layout>
       <navbar slot="sidebar" :items="menuItems"></navbar>
+      <modal-demo slot="content"></modal-demo>
     </layout>
   </div>
 </template>
@@ -9,13 +10,15 @@
 <script type="text/babel">
   import Layout from './components/layout.vue'
   import Navbar from './components/navbar.vue'
+  import ModalDemo from './screens/modal-demo.vue'
 
   export default {
     name: 'app',
 
     components: {
       Layout,
-      Navbar
+      Navbar,
+      ModalDemo
     },
 
     data () {

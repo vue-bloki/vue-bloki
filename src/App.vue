@@ -4,6 +4,7 @@
       <navbar slot="sidebar" :items="menuItems"></navbar>
       <content-wrapper slot="content">
         <modal-demo></modal-demo>
+        <progress-bar-demo></progress-bar-demo>
       </content-wrapper>
     </layout>
   </div>
@@ -14,6 +15,7 @@
   import Navbar from './components/navbar.vue'
   import ContentWrapper from './components/content-wrapper.vue'
   import ModalDemo from './screens/modal-demo.vue'
+  import ProgressBarDemo from './screens/progress-bar-demo.vue'
 
   export default {
     name: 'app',
@@ -22,7 +24,8 @@
       Layout,
       Navbar,
       ContentWrapper,
-      ModalDemo
+      ModalDemo,
+      ProgressBarDemo
     },
 
     data () {

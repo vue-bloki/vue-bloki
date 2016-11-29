@@ -3,8 +3,7 @@
     <layout>
       <navbar slot="sidebar" :items="menuItems"></navbar>
       <content-wrapper slot="content">
-        <modal-demo></modal-demo>
-        <progress-bar-demo></progress-bar-demo>
+        <router-view></router-view>
       </content-wrapper>
     </layout>
   </div>
@@ -14,8 +13,6 @@
   import Layout from './components/layout.vue'
   import Navbar from './components/navbar.vue'
   import ContentWrapper from './components/content-wrapper.vue'
-  import ModalDemo from './screens/modal-demo.vue'
-  import ProgressBarDemo from './screens/progress-bar-demo.vue'
 
   export default {
     name: 'app',
@@ -23,21 +20,19 @@
     components: {
       Layout,
       Navbar,
-      ContentWrapper,
-      ModalDemo,
-      ProgressBarDemo
+      ContentWrapper
     },
 
     data () {
       return {
         menuItems: [
           {
-            label: 'Home',
-            href: '/'
+            label: 'Progress bar',
+            href: '/#/progress-bar'
           },
           {
-            label: 'About',
-            href: '/about'
+            label: 'Modal',
+            href: '/#/modal'
           },
           {
             label: 'Disabled item',

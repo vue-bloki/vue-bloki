@@ -6,6 +6,7 @@
       <li><a href="#examples">Examples</a></li>
       <li v-if="docs.props"><a href="#props">Props</a></li>
       <li v-if="docs.slots"><a href="#slots">Slots</a></li>
+      <li v-if="docs.events"><a href="#events">Events</a></li>
     </ul>
 
     <div id="examples">
@@ -53,12 +54,34 @@
       </table>
     </div>
 
+    <div id="events" v-if="docs.events">
+      <h2>Events</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(eventData, eventName) in docs.events">
+          <td><code>{{ eventName }}</code></td>
+          <td>{{ eventData.description }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 </template>
 
 <script type="text/babel">
   export default {
-    props: ['docs']
+    props: {
+      docs: {
+        type: Object
+      }
+    }
   }
 </script>
 

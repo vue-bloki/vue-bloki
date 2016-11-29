@@ -6,7 +6,7 @@
         <div class="modal-header">
           <slot name="header">
             <div class="default-header">
-              {{title}}
+              <div class="modal-title">{{ title }}</div>
               <i class="close" @click="$emit('close')">x</i>
             </div>
           </slot>
@@ -27,7 +27,11 @@
 
 <script>
   export default {
-    props: ['title']
+    props: {
+      title: {
+        type: String
+      }
+    }
   }
 </script>
 
@@ -58,7 +62,11 @@
 
   .default-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+  }
+
+  .modal-title {
+    margin-right: auto;
     font-weight: bold;
   }
 

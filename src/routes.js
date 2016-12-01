@@ -1,7 +1,7 @@
-import ModalDemo from './screens/modal-demo.vue'
-import ProgressBarDemo from './screens/progress-bar-demo.vue'
+import ModalDocs from './docs/modal-docs.vue'
+import ProgressBarDocs from './docs/progress-bar-docs.vue'
 
 export default [
-  {path: '/modal', component: ModalDemo},
-  {path: '/progress-bar', component: ProgressBarDemo}
+  {path: '/modal', component: ModalDocs},
+  {path: '/progress-bar', component: ProgressBarDocs}
 ]

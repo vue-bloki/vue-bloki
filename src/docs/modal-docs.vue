@@ -31,6 +31,8 @@
   import Modal from './../components/modal.vue'
 
   export default {
+    name: 'modal-docs',
+
     data () {
       return {
         show: false,

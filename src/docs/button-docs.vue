@@ -37,6 +37,8 @@
   import VbButton from './../components/button.vue'
 
   export default {
+    name: 'button-docs',
+
     data () {
       return {
         disabled: false,

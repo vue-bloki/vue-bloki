@@ -43,6 +43,8 @@
   import ComponentDocs from '../components/component-docs.vue'
 
   export default {
+    name: 'progress-bar-docs',
+
     data () {
       return {
         value: 10,

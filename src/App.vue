@@ -35,6 +35,10 @@
             href: '/#/modal'
           },
           {
+            label: 'Button',
+            href: '/#/button'
+          },
+          {
             label: 'Disabled item',
             isDisabled: true
           },

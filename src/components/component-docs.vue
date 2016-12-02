@@ -29,8 +29,12 @@
         <tr v-for="(propData, propName) in docs.props">
           <td><code>{{ propName }}</code></td>
           <td><code>{{ propData.type.name }}</code></td>
-          <td><code>{{ propData.default }}</code></td>
-          <td>{{ propData.description }}</td>
+          <td>
+            <code v-if="propData.default !== undefined">{{ propData.default }}</code>
+          </td>
+          <td>
+            <div v-html="marked(propData.description)"></div>
+          </td>
         </tr>
         </tbody>
       </table>
@@ -48,7 +52,9 @@
         <tbody>
         <tr v-for="(slotData, slotName) in docs.slots">
           <td><code>{{ slotName }}</code></td>
-          <td>{{ slotData.description }}</td>
+          <td>
+            <div v-if="slotData.description !== undefined" v-html="marked(slotData.description)"></div>
+          </td>
         </tr>
         </tbody>
       </table>
@@ -66,7 +72,9 @@
         <tbody>
         <tr v-for="(eventData, eventName) in docs.events">
           <td><code>{{ eventName }}</code></td>
-          <td>{{ eventData.description }}</td>
+          <td>
+            <div v-if="eventData.description !== undefined" v-html="marked(eventData.description)"></div>
+          </td>
         </tr>
         </tbody>
       </table>
@@ -76,10 +84,22 @@
 </template>
 
 <script type="text/babel">
+  import marked from 'marked'
+
   export default {
     props: {
       docs: {
         type: Object
+      }
+    },
+
+    methods: {
+      marked (text) {
+        if (text) {
+          return marked(text)
+        } else {
+          return ''
+        }
       }
     }
   }

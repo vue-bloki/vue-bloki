@@ -65,4 +65,16 @@
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
   }
+
+  p {
+    margin: 0;
+  }
+
+  code {
+    border: 1px solid lightgray;
+    background: whitesmoke;
+    padding: 0 3px;
+    border-radius: 2px;
+  }
+
 </style>

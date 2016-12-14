@@ -35,6 +35,10 @@
             href: '/#/modal'
           },
           {
+            label: 'Card',
+            href: '/#/card'
+          },
+          {
             label: 'Notification',
             href: '/#/notification'
           },

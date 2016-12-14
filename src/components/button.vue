@@ -33,18 +33,7 @@
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-  @mixin button-variant($topColor, $bottomColor) {
-    background: linear-gradient(to bottom, $topColor 0%, $bottomColor 100%);
-
-    &:not([disabled]):hover {
-      background: linear-gradient(to bottom, darken($topColor, 5%) 0%, darken($bottomColor, 5%) 100%);
-    }
-
-    &.outline {
-      border-color: $topColor;
-      padding: calc(.5rem - 2px) calc(1rem - 2px) calc(.4rem - 2px);
-    }
-  }
+  @import '../styles/main';
 
   button {
     cursor: pointer;
@@ -76,25 +65,7 @@
     }
   }
 
-  .default {
-    @include button-variant(#515f6e, #2c3e50);
-  }
 
-  .primary {
-    @include button-variant(#2298c9, #0084b4);
-  }
-
-  .success {
-    @include button-variant(#89c042, #76af30);
-  }
-
-  .warning {
-    @include button-variant(#e9c00e, #d8a012);
-  }
-
-  .error {
-    @include button-variant(#ea0f3b, #c71f3e);
-  }
 
   .large {
     padding: .7rem 1.3rem .5rem;

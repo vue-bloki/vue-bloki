@@ -7,7 +7,7 @@
           <slot name="header">
             <div class="default-header">
               <div class="modal-title">{{ title }}</div>
-              <i class="close" @click="$emit('close')">x</i>
+              <button class="close-btn" @click="$emit('close')"></button>
             </div>
           </slot>
         </div>
@@ -36,6 +36,8 @@
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
+  @import '../styles/main';
+
   .modal-mask {
     position: fixed;
     z-index: 9998;

@@ -16,12 +16,18 @@
 
       variant: {
         type: String,
-        default: 'default'
+        default: 'default',
+        validator (value) {
+          return ['default', 'primary', 'success', 'warning', 'error'].includes(value)
+        }
       },
 
       size: {
         type: String,
-        default: 'medium'
+        default: 'medium',
+        validator (value) {
+          return ['small', 'medium', 'large'].includes(value)
+        }
       },
 
       outline: {
@@ -94,6 +100,10 @@
 
   .error {
     @include button-variant(#ea0f3b, #c71f3e);
+  }
+
+  .small {
+    padding: .3rem .7rem .2rem;
   }
 
   .large {

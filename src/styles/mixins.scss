@@ -1,0 +1,11 @@
+@import "~font-awesome/scss/mixins";
+@import "~font-awesome/scss/variables";
+
+@mixin icon($icon-name, $fa-var-name) {
+  .#{$icon-name} {
+    @include fa-icon;
+    &:before {
+      content: $fa-var-name;
+    }
+  }
+}

@@ -61,7 +61,10 @@
   }
 </script>
 
-<style>
+<style lang="scss" rel="stylesheet/scss">
+  @import "./styles/settings";
+  @import "~font-awesome/scss/path";
+
   * {
     box-sizing: border-box;
   }

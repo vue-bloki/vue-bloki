@@ -62,7 +62,8 @@
 
             size: {
               type: String,
-              default: 'medium'
+              default: 'medium',
+              description: 'Applies button size. The value can be `small`, `medium`, `large`.'
             },
 
             outline: {

@@ -16,12 +16,18 @@
 
       variant: {
         type: String,
-        default: 'default'
+        default: 'default',
+        validator (value) {
+          return ['default', 'primary', 'success', 'warning', 'error'].includes(value)
+        }
       },
 
       size: {
         type: String,
-        default: 'medium'
+        default: 'medium',
+        validator (value) {
+          return ['small', 'medium', 'large'].includes(value)
+        }
       },
 
       outline: {
@@ -66,6 +72,10 @@
   }
 
 
+
+  .small {
+    padding: .3rem .7rem .2rem;
+  }
 
   .large {
     padding: .7rem 1.3rem .5rem;

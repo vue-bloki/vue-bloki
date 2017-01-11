@@ -39,16 +39,25 @@
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-  @mixin button-variant($topColor, $bottomColor) {
-    background: linear-gradient(to bottom, $topColor 0%, $bottomColor 100%);
+  @import "./../styles/variables";
 
-    &:not([disabled]):hover {
-      background: linear-gradient(to bottom, darken($topColor, 5%) 0%, darken($bottomColor, 5%) 100%);
+  @mixin button-variant($color) {
+    background-color: $color;
+    border-color: $color;
+
+    &:not([disabled]):not(.outline):hover {
+      background-color: darken($color, 5%);
+      border-color: darken($color, 5%);
     }
 
     &.outline {
-      border-color: $topColor;
-      padding: calc(.5rem - 2px) calc(1rem - 2px) calc(.4rem - 2px);
+      color: $color;
+      border-color: $color;
+
+      &:not([disabled]):hover {
+        color: darken($color, 5%);
+        border-color: darken($color, 5%);
+      }
     }
   }
 
@@ -56,24 +65,21 @@
     cursor: pointer;
     font-family: inherit;
     font-size: inherit;
-    padding: .5rem 1rem .4rem;
     letter-spacing: 0.02em;
     color: white;
-    border: none;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border: 2px solid;
 
     &:focus {
-      outline-color: lighten(#2c3e50, 25%);
+      outline: none;
+    }
+
+    &:active {
+      box-shadow: 0 0 5px gray;
     }
 
     &.outline {
       background: transparent;
-      border-width: 2px;
-      border-style: solid;
-      text-shadow: none;
-      color: inherit;
     }
 
     &[disabled] {
@@ -83,27 +89,31 @@
   }
 
   .default {
-    @include button-variant(#515f6e, #2c3e50);
+    @include button-variant($colorDefault);
   }
 
   .primary {
-    @include button-variant(#2298c9, #0084b4);
+    @include button-variant($colorPrimary);
   }
 
   .success {
-    @include button-variant(#89c042, #76af30);
+    @include button-variant($colorSuccess);
   }
 
   .warning {
-    @include button-variant(#e9c00e, #d8a012);
+    @include button-variant($colorWarning);
   }
 
   .error {
-    @include button-variant(#ea0f3b, #c71f3e);
+    @include button-variant($colorError);
   }
 
   .small {
     padding: .3rem .7rem .2rem;
+  }
+
+  .medium {
+    padding: .5rem 1rem .4rem;
   }
 
   .large {

@@ -1,88 +1,29 @@
-@mixin color-variant($topColor, $bottomColor) {
-  background: linear-gradient(to bottom, $topColor 0%, $bottomColor 100%);
-  color: white;
-  &:not([disabled]):hover {
-    background: linear-gradient(to bottom, darken($topColor, 5%) 0%, darken($bottomColor, 5%) 100%);
-  }
+@import "./variables";
 
-  &.outline {
-    border-color: $topColor;
-    padding: calc(.5rem - 2px) calc(1rem - 2px) calc(.4rem - 2px);
-  }
-}
+@import "./mixins";
 
 .default {
-  @include color-variant(#515f6e, #2c3e50);
+  @include color-variant($colorDefault);
 }
 
 .primary {
-  @include color-variant(#2298c9, #0084b4);
+  @include color-variant($colorPrimary);
 }
 
 .success {
-  @include color-variant(#89c042, #76af30);
+  @include color-variant($colorSuccess);
 }
 
 .warning {
-  @include color-variant(#e9c00e, #d8a012);
+  @include color-variant($colorWarning);
 }
 
 .error {
-  @include color-variant(#ea0f3b, #c71f3e);
+  @include color-variant($colorError);
 }
 
-//close button
+@include close-button()
 
-*:before, *:after {
-  box-sizing: border-box;
-}
 
-.close-btn {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  background-color: rgba(10, 10, 10, 0.1);
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  height: 24px;
-  outline: none;
-  position: relative;
-  vertical-align: top;
-  width: 24px;
-  border-radius: 0 3px;
-  float: right;
-  margin: -16px -20px 0 20px;
 
-  &:hover {
-    background-color: rgba(10, 10, 10, 0.2);
-  }
-
-  &:before, &:after {
-    background-color: white;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    margin-left: -25%;
-    margin-top: -1px;
-    position: absolute;
-    top: 50%;
-    width: 50%;
-  }
-
-  &:before {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-
-  &:after {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-  }
-}
 

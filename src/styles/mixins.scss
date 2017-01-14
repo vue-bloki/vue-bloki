@@ -9,3 +9,74 @@
     }
   }
 }
+
+@mixin color-variant($color) {
+  background-color: $color;
+  border-color: $color;
+
+  &:not([disabled]):not(.outline):hover {
+    background-color: darken($color, 5%);
+    border-color: darken($color, 5%);
+  }
+
+  &.outline {
+    color: $color;
+    border-color: $color;
+
+    &:not([disabled]):hover {
+      color: darken($color, 5%);
+      border-color: darken($color, 5%);
+    }
+  }
+}
+
+@mixin close-button(){
+  .close-btn {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: rgba(10, 10, 10, 0.1);
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    outline: none;
+    position: relative;
+    vertical-align: top;
+    width: 24px;
+    border-radius: 0 3px;
+    float: right;
+    margin: -16px -20px 0 20px;
+
+    &:hover {
+      background-color: rgba(10, 10, 10, 0.2);
+    }
+
+    &:before, &:after {
+      background-color: white;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      margin-left: -25%;
+      margin-top: -1px;
+      position: absolute;
+      top: 50%;
+      width: 50%;
+    }
+
+    &:before {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+}

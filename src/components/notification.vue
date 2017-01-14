@@ -1,8 +1,8 @@
 <template>
-  <div class="notification"
-       v-if="show"
-       :class="variant">
-    <button @click="close" class="close-btn"></button>
+  <div
+    class="notification"
+    :class="variant">
+    <button @click="$emit('close')" class="close-btn"></button>
     {{message}}
   </div>
 </template>
@@ -17,22 +17,12 @@
         type: String,
         default: 'default'
       }
-    },
-    data () {
-      return {
-        show: true
-      }
-    },
-    methods: {
-      close () {
-        this.$emit('close')
-        this.show = false
-      }
     }
   }
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
+  @import '../styles/variables';
   @import '../styles/main';
 
   .notification {

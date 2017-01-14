@@ -39,30 +39,47 @@
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-  @import '../styles/main';
+  @import "./../styles/variables";
+
+  @mixin button-variant($color) {
+    background-color: $color;
+    border-color: $color;
+
+    &:not([disabled]):not(.outline):hover {
+      background-color: darken($color, 5%);
+      border-color: darken($color, 5%);
+    }
+
+    &.outline {
+      color: $color;
+      border-color: $color;
+
+      &:not([disabled]):hover {
+        color: darken($color, 5%);
+        border-color: darken($color, 5%);
+      }
+    }
+  }
 
   button {
     cursor: pointer;
     font-family: inherit;
     font-size: inherit;
-    padding: .5rem 1rem .4rem;
     letter-spacing: 0.02em;
     color: white;
-    border: none;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border: 2px solid;
 
     &:focus {
-      outline-color: lighten(#2c3e50, 25%);
+      outline: none;
+    }
+
+    &:active {
+      box-shadow: 0 0 5px gray;
     }
 
     &.outline {
       background: transparent;
-      border-width: 2px;
-      border-style: solid;
-      text-shadow: none;
-      color: inherit;
     }
 
     &[disabled] {
@@ -71,10 +88,32 @@
     }
   }
 
+  .default {
+    @include button-variant($colorDefault);
+  }
 
+  .primary {
+    @include button-variant($colorPrimary);
+  }
+
+  .success {
+    @include button-variant($colorSuccess);
+  }
+
+  .warning {
+    @include button-variant($colorWarning);
+  }
+
+  .error {
+    @include button-variant($colorError);
+  }
 
   .small {
     padding: .3rem .7rem .2rem;
+  }
+
+  .medium {
+    padding: .5rem 1rem .4rem;
   }
 
   .large {

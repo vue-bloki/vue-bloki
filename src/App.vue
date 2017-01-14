@@ -28,32 +28,32 @@
         menuItems: [
           {
             label: 'Progress bar',
-            href: '/#/progress-bar'
+            href: 'progress-bar'
           },
           {
             label: 'Modal',
-            href: '/#/modal'
+            href: 'modal'
           },
           {
             label: 'Card',
-            href: '/#/card'
+            href: 'card'
           },
           {
             label: 'Notification',
-            href: '/#/notification'
+            href: 'notification'
           },
           {
             label: 'Button',
-            href: '/#/button'
+            href: 'button'
           },
           {
             label: 'Disabled item',
+            href: 'disabled',
             isDisabled: true
           },
           {
             label: 'Active item',
-            href: '/',
-            isActive: true
+            href: '/'
           }
         ]
       }

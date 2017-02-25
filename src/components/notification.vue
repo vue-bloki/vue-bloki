@@ -2,8 +2,12 @@
   <div
     class="notification"
     :class="variant">
-    <button @click="$emit('close')" class="close-btn"></button>
-    {{message}}
+    <button
+      @click="$emit('close')"
+      class="close-btn"></button>
+    <p>
+      {{message}}
+    </p>
   </div>
 </template>
 

@@ -40,26 +40,9 @@
 
 <style scoped lang="scss" rel="stylesheet/scss">
   @import "./../styles/variables";
+  @import '../styles/main';
 
-  @mixin button-variant($color) {
-    background-color: $color;
-    border-color: $color;
 
-    &:not([disabled]):not(.outline):hover {
-      background-color: darken($color, 5%);
-      border-color: darken($color, 5%);
-    }
-
-    &.outline {
-      color: $color;
-      border-color: $color;
-
-      &:not([disabled]):hover {
-        color: darken($color, 5%);
-        border-color: darken($color, 5%);
-      }
-    }
-  }
 
   button {
     cursor: pointer;
@@ -86,26 +69,6 @@
       opacity: .5;
       cursor: not-allowed;
     }
-  }
-
-  .default {
-    @include button-variant($colorDefault);
-  }
-
-  .primary {
-    @include button-variant($colorPrimary);
-  }
-
-  .success {
-    @include button-variant($colorSuccess);
-  }
-
-  .warning {
-    @include button-variant($colorWarning);
-  }
-
-  .error {
-    @include button-variant($colorError);
   }
 
   .small {

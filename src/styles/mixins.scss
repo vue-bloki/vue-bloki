@@ -1,5 +1,6 @@
 @import "~font-awesome/scss/mixins";
 @import "~font-awesome/scss/variables";
+@import "./variables";
 
 @mixin icon($icon-name, $fa-var-name) {
   .#{$icon-name} {
@@ -10,9 +11,10 @@
   }
 }
 
-@mixin color-variant($color) {
+@mixin color-variant($color, $textColor : $colorDefault ) {
   background-color: $color;
   border-color: $color;
+  color: $textColor;
 
   &:not([disabled]):not(.outline):hover {
     background-color: darken($color, 5%);
@@ -30,7 +32,7 @@
   }
 }
 
-@mixin close-button(){
+@mixin close-button() {
   .close-btn {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

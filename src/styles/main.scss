@@ -3,7 +3,7 @@
 @import "./mixins";
 
 .default {
-  @include color-variant($colorDefault);
+  @include color-variant($colorDefault, $colorBlack);
 }
 
 .primary {

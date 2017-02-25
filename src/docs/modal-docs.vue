@@ -2,9 +2,9 @@
   <div>
     <component-docs :docs="docs">
 
-      <button @click="show = true">
+      <VbButton variant="success" @click="show = true">
         Show modal
-      </button>
+      </VbButton>
 
       <modal
         v-if="show"
@@ -17,7 +17,7 @@
         </div>
 
         <div slot="footer">
-          <button>Lorem</button>
+          <VbButton variant="primary" size="small">Lorem</VbButton>
         </div>
 
       </modal>
@@ -29,6 +29,7 @@
 <script type="text/babel">
   import ComponentDocs from './../components/component-docs.vue'
   import Modal from './../components/modal.vue'
+  import VbButton from './../components/button.vue'
 
   export default {
     name: 'modal-docs',
@@ -70,7 +71,8 @@
 
     components: {
       Modal,
-      ComponentDocs
+      ComponentDocs,
+      VbButton
     }
   }
 </script>
